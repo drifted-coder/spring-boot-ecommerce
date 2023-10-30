@@ -1,7 +1,7 @@
 # E-Commerce API
 
-![Project Status] - Active
-[![License] - MIT License
+- ![Project Status] - Active
+- [![License] - MIT License
 
 ## Description
 

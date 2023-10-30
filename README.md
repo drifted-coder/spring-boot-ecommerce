@@ -25,7 +25,7 @@ To run this project locally or integrate it into your own application, follow th
 
 2. **Clone the Repository**
    ```shell
-   git clone https://github.com/your-username/e-commerce-api.git
+   git clone [https://github.com/your-username/e-commerce-api.git](https://github.com/drifted-coder/spring-boot-ecommerce.git)
 
 ## Configuration
 

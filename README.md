@@ -45,3 +45,10 @@ java -jar target/e-commerce-api-1.0.jar
 ## Usage
 
 Use the provided API endpoints to manage products, categories, orders, and more.
+
+## Contact
+If you have any questions or suggestions, feel free to reach out:
+
+Email: ghosharunava57@gmail.com
+GitHub: [Your GitHub Profile](https://github.com/drifted-coder)https://github.com/drifted-coder
+Happy coding!

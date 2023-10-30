@@ -33,14 +33,14 @@ Configure the application properties (e.g., database, security) in src/main/reso
 
 ## Database Setup
 
--Create a database and configure its connection in the properties file.
--Run database migrations or import a schema if required.
+- Create a database and configure its connection in the properties file.
+- Run database migrations or import a schema if required.
 
 ## Build and Run
 
--cd e-commerce-api
--mvn clean install
--java -jar target/e-commerce-api-1.0.jar
+- cd e-commerce-api
+- mvn clean install
+- java -jar target/e-commerce-api-1.0.jar
 
 ## Usage
 
@@ -49,6 +49,6 @@ Use the provided API endpoints to manage products, categories, orders, and more.
 ## Contact
 If you have any questions or suggestions, feel free to reach out:
 
--Email: ghosharunava57@gmail.com
--GitHub: [Your GitHub Profile](https://github.com/drifted-coder)https://github.com/drifted-coder
+- Email: ghosharunava57@gmail.com
+- GitHub: [Your GitHub Profile](https://github.com/drifted-coder)https://github.com/drifted-coder
 Happy coding!

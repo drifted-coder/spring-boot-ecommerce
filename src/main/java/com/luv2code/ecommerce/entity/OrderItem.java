@@ -23,8 +23,8 @@ public class OrderItem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "image_url")
-	private String imgUrl;
+	@Column(name="image_url")
+    private String imageUrl;
 	
 	@Column(name = "unit_price")
 	private BigDecimal unitPrice;

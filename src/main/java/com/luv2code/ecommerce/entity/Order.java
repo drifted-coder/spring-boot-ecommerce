@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -37,8 +38,8 @@ public class Order {
 	@Column(name = "total_quantity")
 	private int totalQuantity;
 	
-	@Column(name = "image_url")
-	private BigDecimal totalPrice;
+	@Column(name="total_price")
+    private BigDecimal totalPrice;
 	
 	@Column(name = "status")
 	private String status;
@@ -58,9 +59,12 @@ public class Order {
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
-	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "shipping_address_id", referencedColumnName = "id")
 	private Address shippingAddress;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "billing_address_id", referencedColumnName = "id")
 	private Address billingAddress;
 	
 	public void add(OrderItem item) {

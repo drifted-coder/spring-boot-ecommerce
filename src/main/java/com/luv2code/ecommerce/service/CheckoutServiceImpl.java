@@ -18,7 +18,7 @@ import com.luv2code.ecommerce.entity.OrderItem;
 @Service
 public class CheckoutServiceImpl implements CheckoutService {
 	
-	private CustomerRepository customerRepository;
+	private final CustomerRepository customerRepository;
 	
 	@Autowired
 	public CheckoutServiceImpl(CustomerRepository customerRepository) {
@@ -37,7 +37,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		
 		// populate order with orderItems
 		Set<OrderItem> orderItems = purchase.getOrderItems();
-		orderItems.forEach(item -> order.add(item));
+		orderItems.forEach(order::add);
 		
 		// populate order with billingAddress and shippingAddress
 		order.setBillingAddress(purchase.getBillingAddress());
@@ -45,6 +45,14 @@ public class CheckoutServiceImpl implements CheckoutService {
 		
 		// populate customer with order
 		Customer customer = purchase.getCustomer();
+
+		// check if this is an existing customer or not ?
+		String theEmail = customer.getEmail();
+		Customer customerDB = customerRepository.findByEmail(theEmail);
+		if(customerDB != null){
+			// found then assign to the customer
+			customer = customerDB;
+		}
 		customer.add(order);
 		
 		// save to the database

@@ -16,10 +16,14 @@ import com.luv2code.ecommerce.dto.Purchase;
 import com.luv2code.ecommerce.dto.PurchaseResponse;
 import com.luv2code.ecommerce.service.CheckoutService;
 
+import java.util.logging.Logger;
+
 @CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/checkout")
 public class CheckoutController {
+
+	private Logger logger = Logger.getLogger(getClass().getName());
 	@Autowired
 	private CheckoutService checkOutService;
 	
@@ -31,6 +35,8 @@ public class CheckoutController {
 
 	@PostMapping("/payment-intent")
 	public ResponseEntity<String> createPaymentIntent(@RequestBody PaymentInfo paymentInfo) throws StripeException {
+		logger.info("payment info amount: "+paymentInfo.getAmount());
+		logger.info("email is: "+paymentInfo.getReceiptEmail());
 		PaymentIntent paymentIntent = checkOutService.createPaymentIntent(paymentInfo);
 		String paymentStr = paymentIntent.toJson();
 
